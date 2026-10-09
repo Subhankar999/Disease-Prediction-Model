@@ -1,0 +1,330 @@
+# =============================================================================
+#  config.yaml  -  the ONE file you edit to change how the web app looks.
+#  Save the file and refresh the browser tab (or press "R" in Streamlit) - done.
+#  No Python knowledge needed.  Colours are any CSS colour (#hex, rgb(), rgba()).
+# =============================================================================
+
+# -----------------------------------------------------------------------------
+# 1. APP TEXT & BRANDING
+# -----------------------------------------------------------------------------
+app:
+  page_title: "Diagnose AI"          # browser-tab title
+  page_icon: "🩺"                       # emoji (or path to a .png/.ico file)
+  brand_name: "Diagonos AI"          # name shown in the sidebar
+  hero_title: "Symptom-based Disease Prediction"
+  hero_subtitle: "Select the symptoms you are experiencing and our machine-learning model will suggest the most likely conditions."
+  layout: "wide"                        # "wide" or "centered"
+  sidebar_state: "collapsed"             # "expanded" or "collapsed"
+
+  tabs:
+    predict: "  Diagnose"
+    insights: "  Model Insights"
+    about: "  About"
+
+  symptom_label: "Which symptoms do you have?"
+  symptom_placeholder: "Type to search, e.g. headache, cough, itching…"
+  predict_button: "Analyse symptoms"
+  clear_button: "Clear"
+  examples_title: "Quick examples"
+
+  disclaimer_title: "Medical disclaimer"
+  disclaimer: >
+    This tool is an educational machine-learning project. It is NOT a medical
+    device and does NOT provide a diagnosis. Always consult a qualified doctor
+    for any health concern. In an emergency, call your local emergency number.
+  footer: "Built with Streamlit & XGBoost  "
+
+# -----------------------------------------------------------------------------
+# 2. FEATURE SWITCHES  (true = show, false = hide)
+# -----------------------------------------------------------------------------
+features:
+  show_theme_picker: true          # theme drop-down in the sidebar
+  show_font_picker: false          # font drop-down
+  show_size_controls: false         # text-size & corner-style controls
+  show_color_finetune: false        # let visitors override primary/accent colours
+  show_hero_stats: false            # the 3 stat badges under the title
+  show_examples: true              # one-click example symptom sets
+  show_explanation: true           # "Why this result?" panel
+  show_download_button: true       # download text report
+  show_probability_chart: true     # bar-chart of top-N predictions
+  show_disclaimer_banner: true     # disclaimer on the Diagnose tab
+  allow_theme_from_url: true       # e.g. http://localhost:8501/?theme=Dark
+
+# -----------------------------------------------------------------------------
+# 3. PREDICTION BEHAVIOUR
+# -----------------------------------------------------------------------------
+prediction:
+  top_k: 5                         # how many candidate diseases to show
+  min_symptoms: 2                  # minimum symptoms before predicting
+  low_confidence_threshold: 0.50   # below this a "low confidence" warning appears
+  high_confidence_threshold: 0.80  # above this the badge turns "high"
+
+# -----------------------------------------------------------------------------
+# 4. THEMES
+#    default_theme must match one of the names below.
+#    Copy-paste a whole block and rename it to create your own theme.
+#
+#    background / sidebar_background accept ANY CSS "background" value:
+#       solid colour :  "#F4F7FB"
+#       gradient     :  "linear-gradient(135deg, #0f172a 0%, #1e293b 100%)"
+#       image        :  "linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.45)), url('https://.../photo.jpg') center/cover fixed"
+# -----------------------------------------------------------------------------
+default_theme: "Dark"
+
+themes:
+  Light:
+    mode: light                        # light | dark  (affects shadows & scrollbars)
+    background: "#F5F7FA"
+    sidebar_background: "#FFFFFF"
+    surface: "#FFFFFF"                 # cards
+    surface_alt: "#EEF2F7"             # inputs, chips, subtle panels
+    text: "#1F2937"
+    text_muted: "#6B7280"
+    border: "#E2E8F0"
+    primary: "#2563EB"
+    primary_contrast: "#FFFFFF"        # text colour ON primary buttons
+    accent: "#7C3AED"
+    success: "#16A34A"
+    warning: "#D97706"
+    danger: "#DC2626"
+    hero_background: "linear-gradient(135deg, #2563EB 0%, #7C3AED 100%)"
+    hero_text: "#FFFFFF"
+
+  Dark:
+    mode: dark
+    background: "#0F1117"
+    sidebar_background: "#161A23"
+    surface: "#1B2030"
+    surface_alt: "#242A3B"
+    text: "#E5E7EB"
+    text_muted: "#9CA3AF"
+    border: "#2E3548"
+    primary: "#60A5FA"
+    primary_contrast: "#0B1220"
+    accent: "#A78BFA"
+    success: "#34D399"
+    warning: "#FBBF24"
+    danger: "#F87171"
+    hero_background: "linear-gradient(135deg, #1E3A8A 0%, #5B21B6 100%)"
+    hero_text: "#FFFFFF"
+
+  Ocean:
+    mode: light
+    background: "linear-gradient(160deg, #E0F2FE 0%, #F0F9FF 45%, #ECFEFF 100%)"
+    sidebar_background: "linear-gradient(180deg, #0C4A6E 0%, #075985 100%)"
+    surface: "rgba(255,255,255,0.88)"
+    surface_alt: "#E6F4FB"
+    text: "#0B2A3C"
+    text_muted: "#4B6B7E"
+    border: "#BAE0F3"
+    primary: "#0284C7"
+    primary_contrast: "#FFFFFF"
+    accent: "#0D9488"
+    success: "#059669"
+    warning: "#D97706"
+    danger: "#DC2626"
+    hero_background: "linear-gradient(135deg, #0369A1 0%, #0D9488 100%)"
+    hero_text: "#FFFFFF"
+    sidebar_text: "#E0F2FE"            # optional: text colour used inside the sidebar
+
+  Forest:
+    mode: light
+    background: "linear-gradient(160deg, #F0FDF4 0%, #ECFCCB 100%)"
+    sidebar_background: "linear-gradient(180deg, #14532D 0%, #166534 100%)"
+    surface: "rgba(255,255,255,0.9)"
+    surface_alt: "#E7F5EA"
+    text: "#14301F"
+    text_muted: "#52705C"
+    border: "#BBE5C6"
+    primary: "#16A34A"
+    primary_contrast: "#FFFFFF"
+    accent: "#CA8A04"
+    success: "#15803D"
+    warning: "#D97706"
+    danger: "#DC2626"
+    hero_background: "linear-gradient(135deg, #15803D 0%, #65A30D 100%)"
+    hero_text: "#FFFFFF"
+    sidebar_text: "#DCFCE7"
+
+  Sunset:
+    mode: light
+    background: "linear-gradient(160deg, #FFF7ED 0%, #FFE4E6 100%)"
+    sidebar_background: "linear-gradient(180deg, #7C2D12 0%, #9F1239 100%)"
+    surface: "rgba(255,255,255,0.9)"
+    surface_alt: "#FFEDE5"
+    text: "#3B1F14"
+    text_muted: "#8A5A4A"
+    border: "#FBCFB8"
+    primary: "#EA580C"
+    primary_contrast: "#FFFFFF"
+    accent: "#DB2777"
+    success: "#16A34A"
+    warning: "#CA8A04"
+    danger: "#BE123C"
+    hero_background: "linear-gradient(135deg, #F97316 0%, #DB2777 100%)"
+    hero_text: "#FFFFFF"
+    sidebar_text: "#FFEDD5"
+
+  Royal Purple:
+    mode: light
+    background: "linear-gradient(160deg, #FAF5FF 0%, #EEF2FF 100%)"
+    sidebar_background: "linear-gradient(180deg, #3B0764 0%, #4C1D95 100%)"
+    surface: "rgba(255,255,255,0.92)"
+    surface_alt: "#F1E9FD"
+    text: "#241238"
+    text_muted: "#6B5B80"
+    border: "#DDD0F2"
+    primary: "#7C3AED"
+    primary_contrast: "#FFFFFF"
+    accent: "#EC4899"
+    success: "#16A34A"
+    warning: "#D97706"
+    danger: "#DC2626"
+    hero_background: "linear-gradient(135deg, #6D28D9 0%, #DB2777 100%)"
+    hero_text: "#FFFFFF"
+    sidebar_text: "#EDE9FE"
+
+  Midnight Neon:
+    mode: dark
+    background: "radial-gradient(circle at 20% 0%, #1B1245 0%, #0A0B1E 55%, #05060F 100%)"
+    sidebar_background: "#0B0D22"
+    surface: "rgba(22,26,58,0.85)"
+    surface_alt: "#1C2150"
+    text: "#EAF0FF"
+    text_muted: "#9AA6D6"
+    border: "#2B3280"
+    primary: "#22D3EE"
+    primary_contrast: "#04121A"
+    accent: "#F472B6"
+    success: "#4ADE80"
+    warning: "#FACC15"
+    danger: "#FB7185"
+    hero_background: "linear-gradient(135deg, #4F46E5 0%, #06B6D4 100%)"
+    hero_text: "#FFFFFF"
+
+  # ---- EXAMPLE: custom background image theme (uncomment & edit) -------------
+  Photo Background:
+    mode: dark
+    background: "linear-gradient(rgba(5,10,25,.72), rgba(5,10,25,.72)), url('https://images.openai.com/static-rsc-4/aDojsCCJETYCBDLK0Z0k4dbiO8zz9u0aEOMkDEVFtRYpc8_yBZ5lQefkv7XiX6KtPR0qKORMf7CbK-8G7vKJh58lwBKmlQ-XdZo3h2JkOyncHvVtcN5X4WbK9BOBVjq8_4WmQtM1esrkP_IeSsZ8pb7rlpBFDBla23v6-oLhZnW4JjbH3VT9taAQXngbR1SV?purpose=fullsize') center/cover fixed"
+    sidebar_background: "rgba(8,14,32,0.92)"
+    surface: "rgba(15,23,42,0.80)"
+    surface_alt: "rgba(30,41,59,0.9)"
+    text: "#F1F5F9"
+    text_muted: "#A5B4CB"
+    border: "rgba(148,163,184,0.25)"
+    primary: "#38BDF8"
+    primary_contrast: "#04121A"
+    accent: "#F472B6"
+    success: "#4ADE80"
+    warning: "#FBBF24"
+    danger: "#F87171"
+    hero_background: "linear-gradient(135deg, rgba(14,116,144,.85), rgba(79,70,229,.85))"
+    hero_text: "#FFFFFF"
+
+# -----------------------------------------------------------------------------
+# 5. TYPOGRAPHY
+#    "fonts" = every font offered in the sidebar picker.
+#    Left side = name shown;  right side = Google-Fonts family spec
+#    (copy it from fonts.google.com -> "Get embed code" -> the part after family=)
+#    Fonts load from the internet; a system fallback is used if offline.
+# -----------------------------------------------------------------------------
+typography:
+  default_font: "Inter"
+  heading_font: "same"              # "same" = same as body, or any name from the list below
+  fallback: "-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"
+  fonts:
+    "Inter": "Inter:wght@300;400;500;600;700;800"
+    "Poppins": "Poppins:wght@300;400;500;600;700;800"
+    "Roboto": "Roboto:wght@300;400;500;700;900"
+    "Montserrat": "Montserrat:wght@300;400;500;600;700;800"
+    "Nunito": "Nunito:wght@300;400;600;700;800"
+    "Lato": "Lato:wght@300;400;700;900"
+    "Source Sans 3": "Source+Sans+3:wght@300;400;600;700"
+    "Merriweather": "Merriweather:wght@300;400;700;900"
+    "Playfair Display": "Playfair+Display:wght@400;600;700;800"
+    "JetBrains Mono": "JetBrains+Mono:wght@300;400;500;700"
+
+# -----------------------------------------------------------------------------
+# 6. SIZES & SPACING   (pixels unless stated)
+# -----------------------------------------------------------------------------
+sizes:
+  base_font_px: 16          # body text  (visitors can scale this with the slider)
+  small_font_px: 13         # captions, chips, footer
+  h1_px: 34                 # hero title
+  h2_px: 24                 # section titles
+  h3_px: 18                 # card titles
+  result_title_px: 30       # predicted disease name
+  stat_value_px: 26         # numbers in the stat badges
+  border_radius_px: 16      # roundness of cards/buttons (visitors can change)
+  card_padding_px: 22
+  hero_padding_px: 32
+  content_max_width_px: 1250
+  sidebar_width_px: 320
+
+  # Choices offered in the sidebar "Text size" control  (label: multiplier)
+  font_scale_options:
+    "S": 0.90
+    "M": 1.00
+    "L": 1.12
+    "XL": 1.25
+  default_font_scale: "M"
+
+  # Choices offered in the sidebar "Corners" control  (label: radius in px)
+  radius_options:
+    "Sharp": 4
+    "Soft": 10
+    "Round": 16
+    "Pill": 28
+
+# -----------------------------------------------------------------------------
+# 7. EFFECTS
+# -----------------------------------------------------------------------------
+effects:
+  card_shadow: true
+  glass_blur_px: 8          # frosted-glass blur behind translucent cards (0 = off)
+  animations: true          # fade-in / hover lift effects
+  button_gradient: true     # gradient (primary -> accent) on the main button
+
+# -----------------------------------------------------------------------------
+# 8. QUICK EXAMPLES  (use exact column names from Training.csv)
+# -----------------------------------------------------------------------------
+examples:
+  "Stomach & acidity":
+    [stomach_pain, acidity, vomiting, ulcers_on_tongue]
+  "Fever & chills":
+    [high_fever, chills, vomiting, sweating, headache, nausea, muscle_pain]
+  "Skin problems":
+    [itching, skin_rash, nodal_skin_eruptions]
+  "Cough & breathing":
+    [cough, breathlessness, phlegm, chest_pain, high_fever]
+  "Frequent urination":
+    [burning_micturition, bladder_discomfort, foul_smell_of urine, continuous_feel_of_urine]
+
+# -----------------------------------------------------------------------------
+# 9. DISPLAY NAMES  (the dataset has typos / odd names - fix them here)
+#    Anything not listed is auto-prettified:  "joint_pain" -> "Joint pain"
+# -----------------------------------------------------------------------------
+symptom_names:
+  "cold_hands_and_feets": "Cold hands and feet"
+  "swollen_extremeties": "Swollen extremities"
+  "dischromic _patches": "Discoloured patches"
+  "spotting_ urination": "Spotting during urination"
+  "foul_smell_of urine": "Foul smell of urine"
+  "toxic_look_(typhos)": "Toxic look (typhos)"
+  "fluid_overload.1": "Fluid overload"
+  "scurring": "Skin scarring / scaling"
+  "diarrhoea": "Diarrhoea"
+  "extra_marital_contacts": "Extra-marital contacts"
+
+disease_names:
+  "Peptic ulcer diseae": "Peptic ulcer disease"
+  "Osteoarthristis": "Osteoarthritis"
+  "Dimorphic hemmorhoids(piles)": "Haemorrhoids (piles)"
+  "(vertigo) Paroymsal  Positional Vertigo": "Paroxysmal positional vertigo"
+  "hepatitis A": "Hepatitis A"
+  "GERD": "GERD (acid reflux)"
+  "Paralysis (brain hemorrhage)": "Paralysis (brain haemorrhage)"
+
+# columns that exist in the CSV but carry no information (all zeros) - hidden in the UI
+hidden_symptoms:
+  - "fluid_overload"
