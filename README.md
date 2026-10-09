@@ -1,4 +1,4 @@
-# 🩺 Disease Prediction ML Project(Diagnos AI)
+# 🩺 Disease Prediction ML Project(Diagnose AI)
 
 ### An Intelligent Machine Learning-Based Disease Prediction Web Application
 
