@@ -68,9 +68,6 @@ All required packages are listed in `requirements.txt`.
 
 
 
-**Important:** Do not commit private datasets, credentials, or other sensitive files to a public repository.
-
-
 ## 🧠 Model Information
 
 The project uses a trained machine learning model to perform disease classification based on the features it was trained on.
