@@ -10,7 +10,7 @@
 app:
   page_title: "Diagnose AI"          # browser-tab title
   page_icon: "🩺"                       # emoji (or path to a .png/.ico file)
-  brand_name: "Diagonos AI"          # name shown in the sidebar
+  brand_name: "Diagonose AI"          # name shown in the sidebar
   hero_title: "Symptom-based Disease Prediction"
   hero_subtitle: "Select the symptoms you are experiencing and our machine-learning model will suggest the most likely conditions."
   layout: "wide"                        # "wide" or "centered"
