@@ -8,8 +8,6 @@ A machine learning-powered web application designed to predict potential disease
 
 **Try the application here:** [Click Here to Open the Live Project](https://subhankar999-disease-prediction-model-app-sxvmlb.streamlit.app/)
 
-> Replace `YOUR_LIVE_PROJECT_URL` with your deployed Streamlit application URL.
-
 ## 📖 Overview
 
 The Disease Prediction ML Project demonstrates how machine learning can be integrated into a web application to analyze health-related input data and generate predicted disease classifications.
