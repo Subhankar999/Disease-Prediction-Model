@@ -6,7 +6,7 @@ A machine learning-powered web application designed to predict potential disease
 
 ## 🌐 Live Project Link
 
-**Try the application here:** [Click Here to Open the Live Project](YOUR_LIVE_PROJECT_URL)
+**Try the application here:** [Click Here to Open the Live Project](https://subhankar999-disease-prediction-model-app-sxvmlb.streamlit.app/)
 
 > Replace `YOUR_LIVE_PROJECT_URL` with your deployed Streamlit application URL.
 
