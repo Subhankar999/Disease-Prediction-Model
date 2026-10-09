@@ -39,19 +39,25 @@ The project focuses on combining predictive modeling, data processing, and web a
 * Demonstrate the practical use of data science and predictive analytics.
 * Build a foundation for future improvements in model evaluation and application usability.
 
-## 🛠️ Technology Stack
+## 📦 Dependencies
 
-| Technology     | Purpose                                   |
-| -------------- | ----------------------------------------- |
-| Python         | Core programming language                 |
-| Pandas         | Data manipulation and preprocessing       |
-| NumPy          | Numerical operations                      |
-| Scikit-learn   | Machine learning and model utilities      |
-| Streamlit      | Interactive web application and dashboard |
-| Pickle         | Model serialization and loading, if used  |
-| Git and GitHub | Version control and project hosting       |
+The project uses the following Python libraries and frameworks:
 
-The exact libraries depend on the model and implementation used in the project.
+| Library      | Minimum Version | Purpose                          |
+| ------------ | --------------- | -------------------------------- |
+| Streamlit    | 1.50            | Interactive web dashboard        |
+| XGBoost      | 2.0             | Machine learning predictions     |
+| Scikit-learn | 1.3             | ML utilities and preprocessing   |
+| Pandas       | 2.0             | Data manipulation and analysis   |
+| NumPy        | 1.24            | Numerical computations           |
+| Plotly       | 5.18            | Interactive data visualizations  |
+| Joblib       | 1.3             | Saving and loading ML models     |
+| PyYAML       | 6.0             | YAML configuration file handling |
+
+### Install Dependencies
+
+All required packages are listed in `requirements.txt`.
+
 
 ## 🔄 Application Workflow
 
@@ -62,97 +68,10 @@ The exact libraries depend on the model and implementation used in the project.
 5. **Result Display:** The dashboard presents the prediction and any supported additional information.
 6. **Export (Optional):** The results can be downloaded if export functionality is available.
 
-## 📁 Project Structure
 
-An example project structure is shown below. Adjust the filenames to match your actual repository.
-
-```text
-Disease-Prediction-ML/
-│
-├── app.py                  # Streamlit application entry point
-├── model.pkl               # Trained model (if using Pickle)
-├── requirements.txt        # Python dependencies
-├── README.md               # Project documentation
-│
-├── data/                   # Dataset files, if included
-├── notebooks/              # Model experimentation, if included
-├── src/                    # Supporting source code, if included
-└── screenshots/            # Application screenshots, if included
-```
 
 **Important:** Do not commit private datasets, credentials, or other sensitive files to a public repository.
 
-## ⚙️ Installation and Setup
-
-### Prerequisites
-
-Make sure the following are installed:
-
-* Python 3.10 or another version compatible with your dependencies
-* Git
-* pip
-
-### 1. Clone the repository
-
-```bash
-git clone YOUR_GITHUB_REPOSITORY_URL
-```
-
-Navigate into the project directory:
-
-```bash
-cd Disease-Prediction-ML
-```
-
-Replace the repository URL with your actual GitHub repository URL.
-
-### 2. Create a virtual environment
-
-```bash
-python -m venv venv
-```
-
-Activate it on Windows:
-
-```bash
-venv\Scripts\activate
-```
-
-On macOS or Linux:
-
-```bash
-source venv/bin/activate
-```
-
-### 3. Install dependencies
-
-```bash
-pip install -r requirements.txt
-```
-
-If you do not have a `requirements.txt` file yet, install the packages required by your application. For example:
-
-```bash
-pip install streamlit pandas numpy scikit-learn
-```
-
-Install other dependencies used by your code, if necessary.
-
-## 🚀 How to Run the Application
-
-Start the Streamlit application using:
-
-```bash
-streamlit run app.py
-```
-
-After the application starts, open the local URL shown in your terminal, usually:
-
-```text
-http://localhost:8501
-```
-
-Enter the required input values and use the application's prediction controls to generate results.
 
 ## 🧠 Model Information
 
@@ -167,81 +86,17 @@ The project uses a trained machine learning model to perform disease classificat
 | Evaluation metrics | Accuracy, precision, recall, F1-score, as applicable |
 | Model file         | `model.pkl`, if applicable                           |
 
-### Model Evaluation
 
-Model performance should be assessed using appropriate evaluation metrics, such as:
-
-* **Accuracy:** Overall proportion of correct predictions.
-* **Precision:** Proportion of positive predictions that are correct for a particular class.
-* **Recall:** Proportion of actual positive cases identified correctly.
-* **F1-score:** Harmonic mean of precision and recall.
-* **Confusion Matrix:** Summary of correct and incorrect classifications.
-
-Add your actual evaluation results after testing the model. Performance depends on the dataset, preprocessing, model selection, and validation method.
-
-## 🖥️ Screenshots
-
-Add screenshots of your application to showcase its interface and functionality.
-
-For example, if your images are stored in the `screenshots/` directory:
-
-```markdown
-![Main Dashboard](screenshots/dashboard.png)
-
-![Prediction Results](screenshots/prediction-results.png)
-```
-
-Replace these example paths with the names of your actual screenshot files.
-
-## 🔮 Future Improvements
-
-Potential enhancements for future versions include:
-
-* Support for additional disease classification models.
-* Improved validation and error handling for user inputs.
-* More comprehensive model evaluation and explainability.
-* Enhanced visualization of prediction results.
-* Improved accessibility and responsive dashboard design.
-* Secure deployment and improved application performance.
-* Additional data import and export options.
 
 ## ⚠️ Limitations and Disclaimer
 
 This project is intended for educational, research, and demonstration purposes only.
 
-* Predictions may be inaccurate or incomplete.
+* Predictions may be inaccurate or incomplete in some cases.
 * Model output depends on the quality and scope of the training data.
 * A confidence score, when displayed, does not necessarily represent the real-world probability that a person has a disease.
 * The application is not a substitute for professional medical advice, diagnosis, or treatment.
 * Users should consult a qualified healthcare professional regarding medical concerns.
-
-## 🤝 Contributing
-
-Contributions and suggestions are welcome.
-
-1. Fork the repository.
-2. Create a new feature branch.
-3. Make your changes and test them.
-4. Commit your changes with a descriptive message.
-5. Open a pull request describing your improvements.
-
-Please ensure that contributions do not expose sensitive medical data or credentials.
-
-## 📄 License
-
-Choose an appropriate open-source license for your project, such as the MIT License, if you want to permit reuse under its terms.
-
-If you choose MIT, add a `LICENSE` file containing the full MIT License text. Do not claim a license until you have selected and added it to the repository.
-
-## 👨‍💻 Author
-
-**Project:** Disease Prediction ML
-
-**GitHub:** [Visit My GitHub Profile](YOUR_GITHUB_PROFILE_URL)
-
-**Live Application:** [Open Disease Prediction Dashboard](YOUR_LIVE_PROJECT_URL)
-
----
 
 ⭐ If you find this project interesting, consider starring the repository on GitHub.
 
