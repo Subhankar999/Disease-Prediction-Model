@@ -306,9 +306,9 @@ with tab_predict:
 # TAB 2 - Model insights
 # --------------------------------------------------------------------------- #
 with tab_insights:
-    m1, m2, m3, m4 = st.columns(4)
+    m1,  m3, m4 = st.columns(3)
     m1.metric("Test accuracy", f"{bundle['test_accuracy'] * 100:.2f}%")
-    m2.metric("Training rows", f"{bundle['n_train_rows']:,}")
+    #m2.metric("Training rows", f"{bundle['n_train_rows']:,}")
     m3.metric("Symptoms (features)", len(OPTIONS))
     m4.metric("Conditions (classes)", len(bundle["classes"]))
     st.caption(
