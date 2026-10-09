@@ -347,13 +347,13 @@ with tab_insights:
 # TAB 3 - About
 # --------------------------------------------------------------------------- #
 with tab_about:
-    a1, a2 = st.columns(2, gap="large")
+    a1 ,a2 = st.columns(2, gap="large")
     with a1:
         with st.container(key="card_about1"):
             st.markdown(
                 "<h3>How it works</h3>"
                 "<p><b>1.</b> You pick the symptoms you have.<br>"
-                f"<b>2.</b> They are converted into a {len(bundle['features'])}-value vector (1 = present, 0 = absent).<br>"
+                f"<b>2.</b> They are converted into a {len(bundle['features'])}-value vector (1 = present,   0 = absent).<br>"
                 "<b>3.</b> An XGBoost multi-class classifier returns a probability for every condition.<br>"
                 "<b>4.</b> The most probable conditions are shown together with the symptoms that support them.</p>",
                 unsafe_allow_html=True,
@@ -361,10 +361,13 @@ with tab_about:
     with a2:
         with st.container(key="card_about2"):
             st.markdown(
-                "<h3>Customising this app</h3>"
-                "<p>Every colour, font, size, background, text and feature switch lives in "
-                "<code>config.yaml</code>. Edit it, save, and refresh the page. "
-                "Visitors can also switch themes, fonts and sizes from the sidebar.</p>",
+                "<h3>Key Benefits</h3>"
+                "<b>Quick Predictions:</b> Get potential disease predictions based on selected symptoms.<br>"
+                "<b>Data-Driven Insights:</b> Explore predicted conditions and their associated probability scores.<br>"
+                "<b>User-Friendly Interface:</b> Navigate an intuitive dashboard designed for easy interaction.<br>"
+                "<b>Health Awareness:</b> Navigate an intuitive dashboard designed for easy interaction.<br>"
+                ,
+                
                 unsafe_allow_html=True,
             )
     with st.container(key="card_about3"):
